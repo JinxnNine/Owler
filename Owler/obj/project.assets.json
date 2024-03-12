@@ -7657,19 +7657,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tame2\\.nuget\\packages\\": {}
+    "C:\\Users\\VI\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\School Projects\\Owler\\Owler\\Owler.csproj",
+      "projectUniqueName": "C:\\Users\\VI\\Desktop\\study cs\\Term 2\\Software\\Owler\\Owler\\Owler.csproj",
       "projectName": "Owler",
-      "projectPath": "E:\\School Projects\\Owler\\Owler\\Owler.csproj",
-      "packagesPath": "C:\\Users\\tame2\\.nuget\\packages\\",
-      "outputPath": "E:\\School Projects\\Owler\\Owler\\obj\\",
+      "projectPath": "C:\\Users\\VI\\Desktop\\study cs\\Term 2\\Software\\Owler\\Owler\\Owler.csproj",
+      "packagesPath": "C:\\Users\\VI\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\VI\\Desktop\\study cs\\Term 2\\Software\\Owler\\Owler\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\tame2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\VI\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7689,6 +7689,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -7743,7 +7748,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
