@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2i080azan38PGkeJ1NmlovND/1srcqZdEns8B5oq4oA=",
+  "Hash": "d6n647cadVPtI8kzZIOwNUYiOKrohZlwVspm6xoLD0c=",
   "Source": "Owler",
   "BasePath": "_content/Owler",
   "Mode": "Default",
@@ -1275,12 +1275,12 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "E:\\School Projects\\Owler\\Owler\\wwwroot\\favicon.png",
+      "Identity": "E:\\School Projects\\Owler\\Owler\\wwwroot\\owl.png",
       "SourceId": "Owler",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\School Projects\\Owler\\Owler\\wwwroot\\",
       "BasePath": "_content/Owler",
-      "RelativePath": "favicon.png",
+      "RelativePath": "owl.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1289,7 +1289,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\favicon.png"
+      "OriginalItemSpec": "wwwroot\\owl.png"
     }
   ]
 }
