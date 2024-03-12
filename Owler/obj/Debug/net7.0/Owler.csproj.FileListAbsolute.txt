@@ -84,3 +84,7 @@ E:\School Projects\Owler\Owler\obj\Debug\net7.0\refint\Owler.dll
 E:\School Projects\Owler\Owler\obj\Debug\net7.0\Owler.pdb
 E:\School Projects\Owler\Owler\obj\Debug\net7.0\Owler.genruntimeconfig.cache
 E:\School Projects\Owler\Owler\obj\Debug\net7.0\ref\Owler.dll
+e:\School Projects\Owler\Owler\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.Design.dll
+e:\School Projects\Owler\Owler\bin\Debug\net7.0\Npgsql.dll
+e:\School Projects\Owler\Owler\bin\Debug\net7.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+e:\School Projects\Owler\Owler\bin\Debug\net7.0\Npgsql.EntityFrameworkCore.PostgreSQL.Design.dll

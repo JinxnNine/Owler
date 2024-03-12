@@ -53,8 +53,8 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\favicon.png",
-      "PackagePath": "staticwebassets\\favicon.png"
+      "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\owl.png",
+      "PackagePath": "staticwebassets\\owl.png"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Owler.Microsoft.AspNetCore.StaticWebAssets.props",
