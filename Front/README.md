@@ -1,2 +1,0 @@
-# Owler
-Owler, SW Project
