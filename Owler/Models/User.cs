@@ -1,35 +1,14 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Identity;
 namespace Owler.Models;
-public class User
+public class User : IdentityUser
 {
-    // Attributes 
-    private string Name;
-    private string Email;
-    private string Password;
-    private int DateOfBirth;
-    private int Id;
+    [MaxLength(100)]
+    public required string Name { get; set; }
+    public DateTime CreationDate { get; set; } = DateTime.UtcNow;
+    public List<Class> Classes { get; set; } = new();
+    public List<Quiz> Quizzes { get; set; } = new();
+    public List<Assignment> Assignments { get; set; } = new();
 
-    //Constructor
-    public User(string Name, string Email, string Password, int DateOfBirth, int Id)
-    {
-        this.Name = Name;
-        this.Email = Email;
-        this.Password = Password;
-        this.DateOfBirth = DateOfBirth;
-        this.Id = Id;
-    }
-
-    //Methods
-    public string Register()
-    {
-        return $"{Email} {Password}";
-    }
-    public string Login()
-    {
-        return $"{Email} {Password}";
-    }
-    public string Contact()
-    {
-        return Email;
-    }
 }

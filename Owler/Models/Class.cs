@@ -1,24 +1,16 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
 namespace Owler.Models;
 public class Class
 {
-    // Attributes
-    public string Name { get; set; }
+    [Key]
+    public int ClassCode { get; set; }
+    public required string Name { get; set; }
+    public string? Subject { get; set; }
     public int TeacherID { get; set; }
-    public DateTime DateCreated { get; set; }
-    public string Code { get; set; }
-    public Student[] Students { get; set; }
-    public string Subject { get; set; }
-
-    // Constructor
-    public Class(string name, int teacherID, DateTime dateCreated, string code, Student[] students, string subject)
-    {
-        Name = name;
-        TeacherID = teacherID;
-        DateCreated = dateCreated;
-        Code = code;
-        Students = students;
-        Subject = subject;
-    }
+    public Teacher? Teacher { get; set; }
+    public DateTime CreationDate { get; set; } = DateTime.UtcNow;
+    public List<User> Users { get; set; } = new();
 }
 
