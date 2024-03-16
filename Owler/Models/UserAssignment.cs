@@ -9,7 +9,7 @@ namespace Owler.Models;
 public class UserAssignment
 {
     [ForeignKey(nameof(User))]
-    public int UserId { get; set; }
+    public required string UserId { get; set; }
     public User? User { get; set; }
 
     [ForeignKey(nameof(Assignment))]

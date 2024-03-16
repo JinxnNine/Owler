@@ -9,10 +9,10 @@ namespace Owler.Models;
 public class UserQuiz
 {
     [ForeignKey(nameof(User))]
-    public int UserId { get; set; }
+    public required string UserId { get; set; }
     public User? User { get; set; }
 
-    [ForeignKey(nameof(Class))]
+    [ForeignKey(nameof(Quiz))]
     public int QuizId { get; set; }
     public Quiz? Quiz { get; set; }
     public int Mark { get; set; }

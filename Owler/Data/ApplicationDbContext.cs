@@ -5,13 +5,12 @@ using Owler.Models;
 
 namespace Owler.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<User>
     {
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
-
         }
 
         public DbSet<Class> Classes { get; set; }
@@ -31,10 +30,13 @@ namespace Owler.Data
             builder.Entity<IdentityUserRole<string>>().ToTable("UserRoles");
             builder.Entity<IdentityRoleClaim<string>>().ToTable("RoleClaims");
 
-            builder.Entity<User>().HasMany(q => q.Classes).WithMany(s => s.Users).UsingEntity<UserClass>();
-            builder.Entity<User>().HasMany(q => q.Quizzes).WithMany(s => s.Users).UsingEntity<UserQuiz>();
-            builder.Entity<User>().HasMany(q => q.Assignments).WithMany(s => s.Users).UsingEntity<UserAssignment>();
+            builder.Entity<User>().HasMany(q => q.StudentClasses).WithMany(s => s.Users).UsingEntity<UserClass>();
+            builder.Entity<User>().HasMany(q => q.StudentQuizzes).WithMany(s => s.Users).UsingEntity<UserQuiz>();
+            builder.Entity<User>().HasMany(q => q.StudentAssignments).WithMany(s => s.Users).UsingEntity<UserAssignment>();
             
+            builder.Entity<Class>().HasOne(q => q.Teacher).WithMany(s => s.TeacherClasses).HasForeignKey(d=>d.TeacherId);
+            builder.Entity<Assignment>().HasOne(q => q.Teacher).WithMany(s => s.TeacherAssignments).HasForeignKey(d=>d.TeacherId);
+            builder.Entity<Quiz>().HasOne(q => q.Teacher).WithMany(s => s.TeacherQuizzes).HasForeignKey(d=>d.TeacherId);
             
             base.OnModelCreating(builder);
         }

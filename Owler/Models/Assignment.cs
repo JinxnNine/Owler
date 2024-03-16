@@ -13,8 +13,8 @@ public class Assignment
     public int Mark { get; set; }
 
     [ForeignKey(nameof(Teacher))]
-    public int TeacherID { get; set; }
-    public Teacher? Teacher { get; set; }
+    public required string TeacherId { get; set; }
+    public User? Teacher { get; set; }
 
     [ForeignKey(nameof(Class))]
     public int ClassCode { get; set; }
