@@ -9,6 +9,9 @@ on:
       - main
   workflow_dispatch:
 
+env:
+  WORKING_DIRECTORY: .\Owler
+
 jobs:
   build:
     runs-on: ubuntu-latest
