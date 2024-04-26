@@ -1,0 +1,103 @@
+/*start fonts*/
+.fahkwang-regular {
+    font-family: "Fahkwang", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.cairo-font{
+    font-family: "Cairo", sans-serif;
+    font-optical-sizing: auto;
+}
+/*end fonts*/
+/*start box*/
+.d-flex{
+    display: flex;
+}
+.align-center{
+    align-items: center;
+}
+.sp-between{
+    justify-content: space-between;
+}
+.flex-col{
+    flex-direction: column;
+}
+/*end box*/
+/* start padding + margin*/
+.p-10{
+    padding: 10px ;
+}
+.p-15{
+    padding: 15px ;
+}    
+.p-20{
+    padding: 20px;
+    }
+.m-20{
+    margin: 20px;
+    }
+.mt-10{
+    margin-top: 10px;
+    }
+.mt-o{
+    margin-top: 0;
+    }
+/* end padding + margin*/
+/* start colos*/
+    .bg-white{
+    background: #fff;
+}
+.c-black{
+    color: black;
+}
+/*end colos*/
+/*start position*/
+.p-relative{
+    position: relative;
+}
+/*end position*/
+/*start text*/
+.txt-c{
+    text-align: center;
+}
+.fs-24{
+    font-size: 24px;
+}
+
+/*end text*/
+/*start border*/
+.rad-6{
+    border-radius: 6px;
+}
+.rad-20{
+    border-radius: 20px;
+}
+.main-border{
+    border: 1px solid var(--thrid-color);
+}
+/*end border*/
+ /* start width*/
+.w-full{
+    width: 100%;
+}
+/*end width*/
+/*start media*/
+@media (max-width:767px) {
+    .hide-moblie{
+        display: none;
+    }
+}
+@media (max-width:767px) {
+    .column-mob{
+        flex-direction: column;
+    }
+}
+/*end media*/
+/*start components*/
+.between-flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*start components*/

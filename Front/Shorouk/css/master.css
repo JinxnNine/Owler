@@ -1,0 +1,284 @@
+:root {
+    --main-color: #F1E8F6;
+    --second-color: #401E5014;
+    --thrid-color: #3E1B66; /* Note: Consider correcting the misspelling of "thrid" to "third" */
+    --grey-color: #888;
+    --color-light:#AD86C0;
+  }
+
+*{
+    box-sizing: border-box;
+}
+body{
+  margin: 0;
+}
+*:focus{
+    outline: none;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    padding: 0;
+    list-style: none;
+}
+.homePage{
+    min-height: 100vh;
+}
+/* start sideBar */
+.sideBar{
+    width: 335px;
+    background-color: var(--main-color);
+    border-right: 1px solid var(--thrid-color);
+}
+.sideBar .top h3 {
+    margin-bottom: 30px;
+    color: #31B5FF;
+    font-size: 31px;
+    font-weight: 500;
+}
+.sideBar .top h3 span {
+    color: #8010FF;
+}
+.sideBar ul li a{
+   transition: 0.3s;
+   margin-bottom: 5px;
+}
+.sideBar ul li a:hover ,
+.sideBar ul li a.active {
+background-color:var(--second-color);
+}
+.sideBar ul li a span{
+   font-size: 14px;
+   margin-left: 10px;
+}
+@media (max-width:767px) {
+    .sideBar{
+        width: 68px;
+        padding: 10px ;
+    }
+    .sideBar .top h3 {
+        margin-bottom:10px;
+        font-size: 13px;
+    }
+    .sideBar ul li a span{
+        display: none;
+    }
+}
+/* end sideBar*/
+/* start content */
+/* start head */
+
+.content {
+    overflow: hidden;
+    padding: 0 30px;
+}
+.head p {
+    font-size: 20px;
+    line-height: 59px;
+    margin: 0;
+    padding-left: 15px;
+}
+.head .nav .search-input {
+    padding-right: 2rem;
+    border: 1px solid var(--color-light);
+    margin: 5px;
+    width: 200px;
+    transition: width 0.3s;
+    background-color: #401E500D;
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+.head .nav .search-input:focus{
+    width: 240px;
+    }
+.head .nav .search-icon {
+    position: absolute;
+    right:15px;
+    top: 50%;
+    font-size: 14px;
+    font-weight: 900;
+    transform: translateY(-50%);
+    color: var(--grey-color);
+}
+.head .nav img{
+    width: 47.14px;
+    height: 47.14px;
+    border-radius: 50%;
+    margin-left: 15px;
+    border: 2px solid #8010FF;
+}
+@media (max-width:767px) {
+    .head p {
+        font-size: 19px;
+        font-weight: 500;
+        line-height: 1.5;
+    }
+    .head .nav .search-input {
+        padding-right: 1rem;
+        width: 140px;
+        
+    }
+    .head .nav .search-input:focus{
+        width: 160px;
+    }
+    .head .nav img{
+        margin-left: 5px;
+    }
+}
+/* end head*/
+/*start container*/
+.form1 > textarea {
+width: 576px;
+height: 116px;
+resize: none;
+}
+@media (max-width:767px) {
+.form1 > textarea {
+width:250px;
+}
+}
+.form1 > textarea::placeholder{
+color: #000;
+font-size: 14px !important;
+padding: 0 10px;
+}
+.form1 .Attach div {
+    padding-left: 14px;
+}
+.form1 .Attach div input[type="file"]::-webkit-file-upload-button  {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+
+}
+.form1 .Attach div input[type="url"]{
+background-color: transparent;
+        border: none;
+}
+.form1 .Attach div input[type="url"]::placeholder{
+color: #000;
+font-size: 14px !important;
+
+}
+.form1 .send input {
+    border: none;
+    background-color: transparent;
+    width: 80%;
+    padding: 7px 15px;
+}
+.form1 .send input::placeholder{
+color: #000;
+font-size: 14px !important;
+font-weight: 600;
+}     
+.form1 .send button {
+    width: 20%;
+    background-color:  var(--main-color);
+    }
+.forms .code input {
+    width: 230.83px;
+    height: 41.57px;
+}
+.forms .code button {
+    padding: 5px 24px;
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: var(--main-color);
+}
+/* start time courses*/
+.courses {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin: 20px 0;
+ }   
+.courses-time {
+    width: 602px;
+    overflow: hidden;
+}
+.courses-time .teacher {
+    background-color: #401E500D;
+    padding-bottom: 30px;
+}
+.courses-time .teacher:not(:last-of-type){
+    border-bottom: 1px solid var(--thrid-color) ;
+}
+.courses-time .teacher img{
+    width: 40px;
+    height: 40px;
+}
+.courses-time .teacher .text {
+    padding-left: 10px;
+    line-height: 2.5;
+}
+.courses-time .teacher .text span {
+    color: #8010FF;
+    font-size: 22px;
+    line-height: 14px;
+    font-weight: 500;
+}
+.courses-time .teacher .text p {
+    margin: 0;
+    font-size: 20px;
+    line-height: 30px;
+}
+/*end time-courses*/
+/* start Date Picker  */
+    .datepicker {
+    font-family: Arial, sans-serif;
+    display: inline-block;
+    padding: 15px 30px;
+    
+}
+    .datepicker #prevMonthBtn {
+    border: none;
+    background: unset;
+    margin: 0 36px 0 0;
+}
+.datepicker #nextMonthBtn {
+    border: none;
+    background: unset;
+    margin: 0 0 0 36px;
+}
+    .datepicker-header {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .month-year {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 14px;
+    text-align: center;
+}
+    .calendar {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .calendar th, .calendar td {
+    text-align: center;
+    padding: 5px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 18px;
+    color: #4A5660;
+}
+    .calendar th {
+    color: #B5BEC6;
+    font-size: 10px;
+    line-height: 12px;
+}
+    .calendar td:hover {
+        background-color: var(--main-color);
+        cursor: pointer;
+    }
+    .selected {
+        background: #FF6E04;
+        border-radius: 50%;
+        color:#fff;
+    }
+    
+/* end Date Picker  */
+/*end container*/
+/* endcontent */
+

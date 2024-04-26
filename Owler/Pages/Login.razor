@@ -1,0 +1,86 @@
+@page "/loginn"
+@using Microsoft.AspNetCore.Identity
+@using Owler.Models
+@using Owler.Services;
+
+@inject IUserServices UserServices
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+@inject NavigationManager NavigationManager
+
+<div class="left-section">
+    <div class="background">
+        <img src="imgs/background.png" alt="">
+
+        <div class="background-text">
+            <h1 class="special-font" style="color: #31B5FF;line-height: 50px;">Owl<span
+                    style="color: #8010FF;">er</span></h1>
+            <h2 class="special-font1">Let’s <br> Learn <br> together</h2>
+        </div>
+
+    </div>
+    <div class="icon">
+        <img src="imgs/Log In Icon.png" alt="">
+    </div>
+</div>
+<div class="right-section">
+    <h2>Log In</h2>
+    <p>Welcome back! please log in to your account</p>
+    <div>
+        <form>
+            <label for="email" style="font-size: 25px;">
+                Email:
+            </label>
+            <br> <br>
+            <input type="email" name="email" id="email" @bind-value="Email" required>
+            <br><br><br>
+            <label for="password" style="font-size: 25px;">
+                Password:
+            </label>
+            <br><br>
+            <input type="password" name="password" id="password" @bind-value="Password" required>
+            <br>
+            <div class="checkbox">
+                <input type="checkbox" @bind-value="RememberMe" id="remember-me" name="remember-me">
+                <label for="remember-me" style="font-size: small;">Remember Me</label>
+                <a href="" style="margin-left: 300px; color: #000000A8; font-size: small; text-decoration: none;">forgot
+                    password?</a>
+            </div>
+            <br><br><br>
+            <a @onclick="LoginUser" class="first-button">Log In</a>
+            <br>
+            <p style="margin-left: 150px;">Don't have an account? <a href="SignUp" class="second-button">Sign Up</a></p>
+        </form>
+    </div>
+</div>
+
+@code {
+
+    string? Email { get; set; }
+    string? Password { get; set; }
+    bool RememberMe { get; set; }
+
+
+
+
+    async Task LoginUser()
+    {
+        if (Email == null || Password == null)
+        {
+            return;
+        }
+        var loginModel = new LoginModel(signInManager: SignInManager, userManager: UserManager)
+            {
+                UserLoginModel = new UserLoginModel
+                {
+                    Email = Email,
+                    Password = Password,
+                    RememberMe = RememberMe
+                }
+            };
+
+
+        await loginModel.OnPostAsync();
+        NavigationManager.NavigateTo("/Home", true);
+    }
+}

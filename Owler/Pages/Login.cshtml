@@ -1,0 +1,132 @@
+@page "/Login"
+@using Owler.Pages
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model LoginModel
+<link rel="stylesheet" href="css/owler.css">
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+
+
+<div class="left-section">
+    <div class="background">
+        <img src="imgs/background.png" alt="">
+
+        <div class="background-text">
+            <h1 class="special-font" style="color: #31B5FF;line-height: 50px;">
+                Owl
+                <span
+                    style="color: #8010FF;">
+                    er
+                </span>
+            </h1>
+            <h2 class="special-font1">Let's <br> Learn <br> together</h2>
+        </div>
+
+    </div>
+    <div class="icon">
+        <img src="imgs/Log In Icon.png" alt="">
+    </div>
+</div>
+<div class="right-section">
+    <h2>Log In</h2>
+    <p>Welcome back! please log in to your account</p>
+    <div>
+        @using (Html.BeginForm(FormMethod.Post))
+        {
+            @Html.LabelFor(m => m.UserLoginModel.Email, new { style = "font-size: 25px;" })
+            <br/>
+
+            <br/>
+            @Html.TextBoxFor(m => m.UserLoginModel.Email, new { style = "width: 300px;" })
+            <br/>
+
+            <br/>
+
+            <br/>
+            @Html.LabelFor(m => m.UserLoginModel.Password, new { style = "font-size: 25px;" })
+            <br/>
+
+            <br/>
+            @Html.PasswordFor(m => m.UserLoginModel.Password, new { style = "width: 300px;" })
+            <br/>
+            <div class="checkbox">
+                @Html.CheckBoxFor(m => m.UserLoginModel.RememberMe, new { id = "remember-me" })
+                @Html.Label("Remember Me", "Remember Me", new { style = "font-size: small;" })
+                <a href="" style="margin-left: 300px; color: #000000A8; font-size: small; text-decoration: none;">forgot password?</a>
+            </div>
+            <br/>
+
+            <br/>
+
+            <br/>
+            <button type="submit" class="first-button">Log In</button>
+
+            <br/>
+            <p style="margin-left: 150px;">Don't have an account? <a href="SignUp" class="second-button">Sign Up</a></p>
+        }
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*  <div>
+           <form id="account" method="post">
+   
+               <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+   
+               <label asp-for="UserLoginModel.Email" for="email" style="font-size: 25px;">
+                   Email:
+               </label>
+               <br> <br>
+               <input type="email" type="text" name="email" id="email" asp-for="UserLoginModel.Email" required>
+               <span asp-validation-for="UserLoginModel.Email" class="text-danger"></span>
+   
+               <br><br><br>
+   
+               <label asp-for="UserLoginModel.Password" for="password" style="font-size: 25px;">
+                   Password:
+               </label>
+               <br><br>
+   
+               <input type="password" name="password" id="password" asp-for="UserLoginModel.Password" required>
+               <span asp-validation-for="UserLoginModel.Password" class="text-danger"></span>
+   
+               <br>
+   
+               <div class="checkbox">
+                   <input type="checkbox" asp-for="UserLoginModel.RememberMe" id="remember-me" name="remember-me">
+                   <label asp-for="UserLoginModel.RememberMe" for="remember-me" style="font-size: small;">Remember Me</label>
+                   <a href="" style="margin-left: 300px; color: #000000A8; font-size: small; text-decoration: none;">
+                       forgot
+                       password?
+                   </a>
+               </div>
+               <br><br><br>
+               <button type="submit" class="first-button">Log In</button>
+               <br>
+               <p style="margin-left: 150px;">Don't have an account? <a href="SignUp" class="second-button">Sign Up</a></p>
+           </form>
+       </div>
+ *@
+
+
+@*
+ *@

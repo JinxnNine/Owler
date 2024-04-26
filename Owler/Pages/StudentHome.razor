@@ -1,0 +1,175 @@
+@page "/StudentHome"
+@using Owler.Models
+@using Owler.Data
+@using Microsoft.AspNetCore.Identity
+@inject IJSRuntime JsRuntime
+@inject ApplicationDbContext DbContext
+@inject SignInManager<User> SignInManager
+@inject AuthenticationStateProvider GetAuthenticationStateAsync
+
+
+<div class=" cairo-font ">
+    <div class=" homePage d-flex ">
+        <div class="sideBar p-20 p-relative d-flex sp-between flex-col">
+            <div class="top">
+                <h3 class="fahkwang-regular p-relative txt-c mt-o">Owl<span>er</span></h3>
+                <ul>
+                    @foreach (var item in _studentHomeSideMenu)
+                    {
+                        <li>
+                            <a href="@item.Uri" class=" d-flex align-center fs-24  c-black rad-6 p-10">
+                                <i class="fa-solid @item.Icon fa-fw"></i>
+                                <span class="hide-moblie">@item.Name</span>
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div class="bottom d-flex  flex-col">
+                <ul>
+                    <li>
+                        <a href="index.html" class=" d-flex  align-center fs-24  c-black rad-6 p-10">
+                            <i class="fa-solid fa-circle-info fa-fw"></i>
+                            <span class="hide-moblie">Support</span>
+                        </a>
+                    </li>
+                    <li>
+                        <form class="form-inline" action="/Identity/Account/Logout" method="post">
+                            <button class=" d-flex  align-center fs-24  c-black rad-6 p-10">
+                                <i class="fa-solid fa-arrow-right-from-bracket fa-fw"></i>
+                                <span class="hide-moblie">Log Out</span>
+                            </button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content w-full">
+            <!-- start head -->
+            <div class=" head bg-white  between-flex">
+                <p class="hello">Hello, @User?.Name </p>
+                <div class="nav d-flex align-center">
+                    <div class="search p-relative ">
+                        <i class="fa-solid fa-magnifying-glass fa-fw search-icon "></i>
+                        <input type="search" class="search-input p-10 rad-20">
+                    </div>
+                    <img src="images/image 1.png" alt="" srcset="">
+                </div>
+            </div>
+            <!-- ennd head   -->
+            <!-- start  content page-->
+            <div class="container p-15 ">
+                <div class="forms bg-white   between-flex column-mob p-relative ">
+                    <div class="form1 column-mob rad-20 main-border p-10 ">
+                        <textarea placeholder="type your note here..." class=" rad-20 main-border p-10"></textarea>
+                        <div class="Attach d-flex p-10 column-mob">
+                            <span>Attach:</span>
+                            <div class=" d-flex p-10 ">
+                                <i class="fa-regular fa-folder fa-fw "></i>
+                                <input type="file" placeholder="file">
+                            </div>
+                            <div class=" d-flex p-10 ">
+                                <i class="fa-solid fa-link fa-fw"></i>
+                                <input type="url" placeholder="link">
+                            </div>
+                        </div>
+                        <div class=" send d-flex p-relative rad-20 main-border">
+                            <input type="text" placeholder="Send to ">
+                            <button type="submit" class="rad-20 main-border">Send </button>
+                        </div>
+                    </div>
+                    <div class="code rad-20  main-border  d-flex flex-col p-20 txt-c">
+                        <label for="Enter">Enter Class Code:</label>
+                        <input type="text" id="Enter" class="rad-20 main-border ">
+                        <button type="button" class="main-border rad-20 mt-10 p-10">Join Class</button>
+                    </div>
+                </div>
+                <div class="courses  column-mob p-relative ">
+                    <div class="courses-time main-border rad-20  ">
+                        <div class="teacher p-10  d-flex ">
+                            <img src="images/Avatars (2).png" alt="">
+                            <div class="text">
+                                <span>Mr/Teacher’s Name</span>
+                                <p>Today we'll meet on 7’clock..<br> Be Ready</p>
+                            </div>
+                        </div>
+                        <div class="teacher p-10  d-flex">
+                            <img src="images/Avatars (1).png" alt="">
+                            <div class="text ">
+                                <span>Mr/Teacher’s Name</span>
+                                <p>Don't miss today’s QUIZ I’ll drop it by 4pm </p>
+                            </div>
+                        </div>
+                        <div class="teacher p-10  d-flex">
+                            <img src="images/Avatars.png" alt="">
+                            <div class="text">
+                                <span>Mr/Teacher’s Name</span>
+                                <p>Make sure to Finish your assignment and <br> then upload it.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="datepicker main-border rad-20 " id="datepicker">
+                        <div class="datepicker-header">
+                            <button id="prevMonthBtn">&lt;</button>
+                            <span class="month-year" id="currentMonthYear"></span>
+                            <button id="nextMonthBtn">&gt;</button>
+                        </div>
+                        <table class="calendar" id="calendar">
+                            <thead>
+                            <tr>
+                                <th>Sun</th>
+                                <th>Mon</th>
+                                <th>Tue</th>
+                                <th>Wed</th>
+                                <th>Thu</th>
+                                <th>Fri</th>
+                                <th>Sat</th>
+                            </tr>
+                            </thead>
+                            <tbody id="calendar-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- end content page-->
+        </div>
+    </div>
+
+</div>
+
+@code{
+
+    record MenuItem(string Name, string Icon, string Uri = "");
+
+    List<MenuItem> _studentHomeSideMenu = new()
+    {
+        new MenuItem("Dashboard", "fa-house"),
+        new MenuItem("My Classes", "fa-book-open", "Classes"),
+        new MenuItem("Quizzes", "fa-clipboard-question", "Quizzes"),
+        new MenuItem("Assignments", "fa-clipboard", "Assignments"),
+    };
+
+    private AuthenticationState userAuth { get; set; }
+    private User User { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            userAuth = await GetAuthenticationStateAsync.GetAuthenticationStateAsync();
+            User = DbContext.Users.FirstOrDefault(u => u.UserName == userAuth.User.Identity.Name);
+        }
+        catch (Exception)
+        {
+        }
+        await base.OnInitializedAsync();
+    }
+
+
+    protected override async void OnAfterRender(bool firstRender)
+    {
+        if (!firstRender) return;
+        await JsRuntime.InvokeVoidAsync("StudentHome");
+    }
+
+}

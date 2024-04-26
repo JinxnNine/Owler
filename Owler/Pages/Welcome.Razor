@@ -1,0 +1,45 @@
+@page "/"
+<AuthorizeView>
+    <Authorized>
+        <Home />
+    </Authorized>
+    <NotAuthorized>
+
+        <div style="margin: 0; padding: 0;">
+            <div>
+                <img src="imgs/indexbg.jpg" style="background-size: cover; background-position: center; background-attachment: fixed; height: 100vh; width: 200vh;
+                     overflow: hidden; display: flex;">
+                <div class="background-text" style="margin-bottom: 100%;">
+                    <h1 class="special-font" style="color: #31B5FF;line-height: 50px;">Owl<span style="color: #8010FF;">er</span></h1>
+                    <p style="color: #0B1158;">
+                        Owler is web space for educational content and <br>
+                        resources that offers a student everything they <br>
+                        need in one place also they can chat with <br>
+                        other students and more.
+                    </p>
+                </div>
+                <img src="imgs/girl-sitting-on-books-with-laptop-by-oblik-studio-.png" alt="" style="position: absolute; bottom: 20px; right: -150px; transform: translateX(-50%);">
+                <div class="button-container">
+                    <a href="login" class="first-button" style="width: 300px; height: 70px;">Let's Go</a>
+                </div>
+                <div class="icons-container">
+                    <a style="text-decoration: none;"> <i class="fa-brands fa-instagram"></i> </a>
+                    <a style="text-decoration: none;"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a style="text-decoration: none;"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </NotAuthorized>
+
+</AuthorizeView>
+
+
+@code {
+
+
+    protected override Task OnInitializedAsync()
+    {
+        
+        return base.OnInitializedAsync();
+    }
+}

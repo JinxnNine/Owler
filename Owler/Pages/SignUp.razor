@@ -1,0 +1,94 @@
+@page "/SignUp"
+@using Owler.Models;
+@using Owler.Services;
+
+
+@inject IUserServices UserServices
+@inject NavigationManager NavigationManager
+
+<div class="left-section">
+    <div class="background">
+        <img src="imgs/background.png" alt="">
+        <div class="background-text">
+            <h1 class="special-font" style="color: #31B5FF;line-height: 50px;">Owl<span style="color: #8010FF;">er</span></h1>
+            <h2 class="special-font1">Let's <br> Learn <br> together</h2>
+        </div>
+    </div>
+    <div class="icon">
+        <img src="imgs/pana.png" alt="">
+    </div>
+</div>
+<div class="right-section">
+    <h2> Sign Up</h2>
+    <p>Welcome! please enter your information </p>
+    <div>
+        <form>
+            <label for="email" style="font-size: 25px;">
+                Email:
+            </label>
+            <br><br>
+            <input type="email" name="email" id="email" @bind-value="Email" required>
+            <br><br><br>
+            <label for="password" style="font-size: 25px;">
+                Password:
+            </label>
+            <br><br>
+            <input type="password" name="password" id="password" @bind-value="Password" required>
+            <br>
+            <input type="checkbox" @bind-value="RememberMe" id="remember-me" name="remember-me">
+            <label for="remember-me" style="font-size: small;">Remember Me</label>
+            <br>
+            <p style="margin-bottom: 1%; font-size: large; color: #000;">Register As A:</p>
+            <div class="radio-container">
+                <br>
+                <label style="font-size: large;">
+                    <input type="radio" name="Teacher" value="@UserType.Teacher">
+                    Teacher
+                </label>
+                <label style="font-size: large; margin-left: 180px;">
+                    <input type="radio" name="Student" @onchange="ChangeUserType" value="@UserType.Student">
+                    Student
+                </label>
+            </div>
+            <br> <br>
+            <a @onclick="SignUpUser" class="first-button">Sign Up</a>
+            <br>
+            <p style="margin-left: 170px;">Have an account? <a href="LogIn" class="second-button">Log In</a></p>
+        </form>
+    </div>
+</div>
+
+
+@code {
+
+    string? Email { get; set; }
+    string? Password { get; set; }
+    bool RememberMe { get; set; }
+    UserType Type { get; set; }
+
+
+
+
+    void ChangeUserType(ChangeEventArgs e)
+    {
+        if (e is not null && e.Value is not null) Type = (UserType)Enum.Parse(typeof(UserType), e.Value.ToString());
+    }
+
+
+    async Task SignUpUser()
+    {
+        if (Email is null || Password is null)
+        {
+            return;
+        }
+        await UserServices.Register(new UserRegisterModel()
+            {
+                Email = Email,
+                Password = Password,
+                RememberMe = RememberMe,
+                UserType = Type
+
+            });
+        NavigationManager.NavigateTo("/login", true);
+    }
+}
