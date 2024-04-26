@@ -1,10 +1,10 @@
-name: Build and deploy .NET Core application to Web App owlerr
+name: Build and deploy .NET Core application to Web App Owlerr
 on:
   push:
     branches:
     - main
 env:
-  AZURE_WEBAPP_NAME: owlerr
+  AZURE_WEBAPP_NAME: Owlerr
   AZURE_WEBAPP_PACKAGE_PATH: ./published
   CONFIGURATION: Release
   DOTNET_CORE_VERSION: 7.0.x
@@ -44,5 +44,5 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        publish-profile: ${{ secrets.owlerr_5B05 }}
+        publish-profile: ${{ secrets.Owlerr_31B6 }}
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}

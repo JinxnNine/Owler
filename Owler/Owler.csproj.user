@@ -2,6 +2,6 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ActiveDebugProfile>https</ActiveDebugProfile>
-    <NameOfLastUsedPublishProfile>E:\School Projects\Owler\.github\workflows\owlerr.yml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>E:\School Projects\Owler\.github\workflows\Owlerr.yml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
