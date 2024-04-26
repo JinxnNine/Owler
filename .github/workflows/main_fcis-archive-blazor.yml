@@ -8,7 +8,10 @@ on:
     branches:
       - main
   workflow_dispatch:
-
+env:
+  AZURE_WEBAPP_NAME: Owlerr
+  DOTNET_CORE_VERSION: 7.0.x
+  WORKING_DIRECTORY: .\Owler
 jobs:
   build:
     runs-on: windows-latest
@@ -19,7 +22,7 @@ jobs:
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '3.1'
+          dotnet-version: "3.1"
           include-prerelease: true
 
       - name: Build with dotnet
@@ -38,7 +41,7 @@ jobs:
     runs-on: windows-latest
     needs: build
     environment:
-      name: 'Production'
+      name: "Production"
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
       id-token: write #This is required for requesting the JWT
@@ -48,7 +51,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: .net-app
-      
+
       - name: Login to Azure
         uses: azure/login@v1
         with:
@@ -60,7 +63,6 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'Fcis-Archive-Blazor'
-          slot-name: 'Production'
+          app-name: "Fcis-Archive-Blazor"
+          slot-name: "Production"
           package: .
-          
