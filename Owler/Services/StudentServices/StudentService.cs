@@ -1,9 +1,16 @@
+using Owler.Data;
 using Owler.Models;
 
 namespace Owler.Services.StudentServices;
 
 class StudentService : IStudentService
 {
+
+    private readonly ApplicationDbContext  applicationDbContext;
+    public StudentService(ApplicationDbContext applicationDbContext)
+    {
+        this.applicationDbContext = applicationDbContext;
+    }
     public void AttendLectures(string classId)
     {
         throw new NotImplementedException();

@@ -1,17 +1,24 @@
-﻿@page "/"
+﻿@page "/Home"
+@using Owler.Models;
 
 <PageTitle>Home</PageTitle>
 
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<div class="page d-flex justify-content-center align-content-center align-items-center">
+<AuthorizeView>
+    <NotAuthorized>
+        <p>
+            You are not authorized to access this page.
+        </p>
+    </NotAuthorized>
+</AuthorizeView>
 
-    <h1>Hello And Welcome to Owler</h1>
+<AuthorizeView Roles="@UserType.Student.ToString()">
+    <Authorized>
+        <StudentHome />
+    </Authorized>
+</AuthorizeView>
 
-</div>
+<AuthorizeView Roles="@UserType.Teacher.ToString()">
+    <Authorized>
+        <TeacherHome />
+    </Authorized>
+</AuthorizeView>

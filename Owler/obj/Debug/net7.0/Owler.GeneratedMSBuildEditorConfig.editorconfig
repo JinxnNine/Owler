@@ -20,8 +20,64 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/School Projects/Owler/Owler/Pages/Assignments/AssignmentsPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXNzaWdubWVudHNcQXNzaWdubWVudHNQYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/School Projects/Owler/Owler/Pages/Assignments/StudentAssignmentsPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXNzaWdubWVudHNcU3R1ZGVudEFzc2lnbm1lbnRzUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/School Projects/Owler/Owler/Pages/Assignments/TeacherAssignmentsPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXNzaWdubWVudHNcVGVhY2hlckFzc2lnbm1lbnRzUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/School Projects/Owler/Owler/Pages/Classes/ClassesPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xhc3Nlc1xDbGFzc2VzUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/School Projects/Owler/Owler/Pages/Classes/StudentClassPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xhc3Nlc1xTdHVkZW50Q2xhc3NQYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/School Projects/Owler/Owler/Pages/Classes/TeacherClassPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xhc3Nlc1xUZWFjaGVyQ2xhc3NQYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/School Projects/Owler/Owler/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/School Projects/Owler/Owler/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/School Projects/Owler/Owler/Pages/Quizzes/QuizzesPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUXVpenplc1xRdWl6emVzUGFnZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/School Projects/Owler/Owler/Pages/Quizzes/StudentQuizPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUXVpenplc1xTdHVkZW50UXVpelBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/School Projects/Owler/Owler/Pages/Quizzes/TeacherQuizPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUXVpenplc1xUZWFjaGVyUXVpelBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/School Projects/Owler/Owler/Pages/SignUp.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lnblVwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/School Projects/Owler/Owler/Pages/StudentHome.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudEhvbWUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/School Projects/Owler/Owler/Pages/TeacherHome.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVhY2hlckhvbWUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/School Projects/Owler/Owler/Pages/Welcome.Razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2VsY29tZS5SYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/School Projects/Owler/Owler/Shared/LoginDisplay.razor]
@@ -56,6 +112,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/School Projects/Owler/Owler/Pages/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/School Projects/Owler/Owler/Pages/_Host.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/School Projects/Owler/Owler/Services/UserServices/LogOut copy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = U2VydmljZXNcVXNlclNlcnZpY2VzXExvZ091dCBjb3B5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/School Projects/Owler/Owler/Services/UserServices/LogOut.cshtml]
+build_metadata.AdditionalFiles.TargetPath = U2VydmljZXNcVXNlclNlcnZpY2VzXExvZ091dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/School Projects/Owler/Owler/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

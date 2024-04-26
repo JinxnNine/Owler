@@ -5,12 +5,28 @@
       "PackagePath": "staticwebassets\\Owler.bundle.scp.css"
     },
     {
+      "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\css\\all.min.css",
+      "PackagePath": "staticwebassets\\css\\all.min.css"
+    },
+    {
       "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
     },
     {
       "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\css\\framework.css",
+      "PackagePath": "staticwebassets\\css\\framework.css"
+    },
+    {
+      "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\css\\master.css",
+      "PackagePath": "staticwebassets\\css\\master.css"
+    },
+    {
+      "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\css\\normalize.css",
+      "PackagePath": "staticwebassets\\css\\normalize.css"
     },
     {
       "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
@@ -49,8 +65,64 @@
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
+      "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\css\\owler.css",
+      "PackagePath": "staticwebassets\\css\\owler.css"
+    },
+    {
       "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\images\\Avatars (1).png",
+      "PackagePath": "staticwebassets\\images\\Avatars (1).png"
+    },
+    {
+      "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\images\\Avatars (2).png",
+      "PackagePath": "staticwebassets\\images\\Avatars (2).png"
+    },
+    {
+      "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\images\\Avatars.png",
+      "PackagePath": "staticwebassets\\images\\Avatars.png"
+    },
+    {
+      "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\images\\Mask group.png",
+      "PackagePath": "staticwebassets\\images\\Mask group.png"
+    },
+    {
+      "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\images\\image 1.png",
+      "PackagePath": "staticwebassets\\images\\image 1.png"
+    },
+    {
+      "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\imgs\\Log In Icon.png",
+      "PackagePath": "staticwebassets\\imgs\\Log In Icon.png"
+    },
+    {
+      "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\imgs\\Sign Up Design.png",
+      "PackagePath": "staticwebassets\\imgs\\Sign Up Design.png"
+    },
+    {
+      "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\imgs\\background.png",
+      "PackagePath": "staticwebassets\\imgs\\background.png"
+    },
+    {
+      "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\imgs\\girl-sitting-on-books-with-laptop-by-oblik-studio-.png",
+      "PackagePath": "staticwebassets\\imgs\\girl-sitting-on-books-with-laptop-by-oblik-studio-.png"
+    },
+    {
+      "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\imgs\\indexbg.jpg",
+      "PackagePath": "staticwebassets\\imgs\\indexbg.jpg"
+    },
+    {
+      "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\imgs\\pana.png",
+      "PackagePath": "staticwebassets\\imgs\\pana.png"
+    },
+    {
+      "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\js\\StudentHome.js",
+      "PackagePath": "staticwebassets\\js\\StudentHome.js"
+    },
+    {
+      "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\js\\TeacherHome.js",
+      "PackagePath": "staticwebassets\\js\\TeacherHome.js"
     },
     {
       "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\owl copy.png",
@@ -67,6 +139,38 @@
     {
       "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\owl.png",
       "PackagePath": "staticwebassets\\owl.png"
+    },
+    {
+      "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\webfonts\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\webfonts\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\webfonts\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\webfonts\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\webfonts\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\webfonts\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\webfonts\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\webfonts\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\webfonts\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\webfonts\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\webfonts\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\webfonts\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\webfonts\\fa-v4compatibility.ttf",
+      "PackagePath": "staticwebassets\\webfonts\\fa-v4compatibility.ttf"
+    },
+    {
+      "Id": "E:\\School Projects\\Owler\\Owler\\wwwroot\\webfonts\\fa-v4compatibility.woff2",
+      "PackagePath": "staticwebassets\\webfonts\\fa-v4compatibility.woff2"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Owler.Microsoft.AspNetCore.StaticWebAssets.props",

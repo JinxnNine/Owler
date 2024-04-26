@@ -1,0 +1,13 @@
+﻿@page "/Classes"
+
+<AuthorizeView Roles="Student">
+    <Authorized>
+        <StudentClassPage></StudentClassPage>
+    </Authorized>
+</AuthorizeView>
+<AuthorizeView Roles="Teacher">
+    <Authorized>
+       <TeacherClassPage></TeacherClassPage>
+    </Authorized>
+</AuthorizeView>
+
