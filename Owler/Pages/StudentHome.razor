@@ -6,44 +6,12 @@
 @inject ApplicationDbContext DbContext
 @inject SignInManager<User> SignInManager
 @inject AuthenticationStateProvider GetAuthenticationStateAsync
-
+@inject NavigationManager NavigationManager
 
 <div class=" cairo-font ">
     <div class=" homePage d-flex ">
-        <div class="sideBar p-20 p-relative d-flex sp-between flex-col">
-            <div class="top">
-                <h3 class="fahkwang-regular p-relative txt-c mt-o">Owl<span>er</span></h3>
-                <ul>
-                    @foreach (var item in _studentHomeSideMenu)
-                    {
-                        <li>
-                            <a href="@item.Uri" class=" d-flex align-center fs-24  c-black rad-6 p-10">
-                                <i class="fa-solid @item.Icon fa-fw"></i>
-                                <span class="hide-moblie">@item.Name</span>
-                            </a>
-                        </li>
-                    }
-                </ul>
-            </div>
-            <div class="bottom d-flex  flex-col">
-                <ul>
-                    <li>
-                        <a href="index.html" class=" d-flex  align-center fs-24  c-black rad-6 p-10">
-                            <i class="fa-solid fa-circle-info fa-fw"></i>
-                            <span class="hide-moblie">Support</span>
-                        </a>
-                    </li>
-                    <li>
-                        <form class="form-inline" action="/Identity/Account/Logout" method="post">
-                            <button class=" d-flex  align-center fs-24  c-black rad-6 p-10">
-                                <i class="fa-solid fa-arrow-right-from-bracket fa-fw"></i>
-                                <span class="hide-moblie">Log Out</span>
-                            </button>
-                        </form>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <LeftSideMenu/>
+
         <div class="content w-full">
             <!-- start head -->
             <div class=" head bg-white  between-flex">
@@ -78,57 +46,28 @@
                             <button type="submit" class="rad-20 main-border">Send </button>
                         </div>
                     </div>
-                    <div class="code rad-20  main-border  d-flex flex-col p-20 txt-c">
-                        <label for="Enter">Enter Class Code:</label>
-                        <input type="text" id="Enter" class="rad-20 main-border ">
-                        <button type="button" class="main-border rad-20 mt-10 p-10">Join Class</button>
-                    </div>
+                    <EditForm OnSubmit="AddStudentToClass" EditContext="new EditContext(0)">
+                        <div class="code rad-20  main-border  d-flex flex-col p-20 txt-c">
+                            <label for="Enter">Enter Class Code:</label>
+                            <InputNumber placeholder="Enter The Class Code " @bind-Value="ClassCode" id="Enter" class="rad-20 main-border "/>
+                            <button type="submit" class="main-border rad-20 mt-10 p-10">Join Class</button>
+                        </div>
+                    </EditForm>
                 </div>
                 <div class="courses  column-mob p-relative ">
                     <div class="courses-time main-border rad-20  ">
-                        <div class="teacher p-10  d-flex ">
-                            <img src="images/Avatars (2).png" alt="">
-                            <div class="text">
-                                <span>Mr/Teacher’s Name</span>
-                                <p>Today we'll meet on 7’clock..<br> Be Ready</p>
+                        @foreach (var post in _posts)
+                        {
+                            <div class="teacher p-10  d-flex ">
+                                <img src="@post?.Image" alt="">
+                                <div class="text">
+                                    <span>@post?.Name</span>
+                                    <p>@post?.Text</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="teacher p-10  d-flex">
-                            <img src="images/Avatars (1).png" alt="">
-                            <div class="text ">
-                                <span>Mr/Teacher’s Name</span>
-                                <p>Don't miss today’s QUIZ I’ll drop it by 4pm </p>
-                            </div>
-                        </div>
-                        <div class="teacher p-10  d-flex">
-                            <img src="images/Avatars.png" alt="">
-                            <div class="text">
-                                <span>Mr/Teacher’s Name</span>
-                                <p>Make sure to Finish your assignment and <br> then upload it.</p>
-                            </div>
-                        </div>
+                        }
                     </div>
-                    <div class="datepicker main-border rad-20 " id="datepicker">
-                        <div class="datepicker-header">
-                            <button id="prevMonthBtn">&lt;</button>
-                            <span class="month-year" id="currentMonthYear"></span>
-                            <button id="nextMonthBtn">&gt;</button>
-                        </div>
-                        <table class="calendar" id="calendar">
-                            <thead>
-                            <tr>
-                                <th>Sun</th>
-                                <th>Mon</th>
-                                <th>Tue</th>
-                                <th>Wed</th>
-                                <th>Thu</th>
-                                <th>Fri</th>
-                                <th>Sat</th>
-                            </tr>
-                            </thead>
-                            <tbody id="calendar-body"></tbody>
-                        </table>
-                    </div>
+                    <DatePicker/>
                 </div>
             </div>
             <!-- end content page-->
@@ -138,38 +77,54 @@
 </div>
 
 @code{
+    public int? ClassCode { get; set; }
 
-    record MenuItem(string Name, string Icon, string Uri = "");
-
-    List<MenuItem> _studentHomeSideMenu = new()
+    record AddStudentToClassModel()
     {
-        new MenuItem("Dashboard", "fa-house"),
-        new MenuItem("My Classes", "fa-book-open", "Classes"),
-        new MenuItem("Quizzes", "fa-clipboard-question", "Quizzes"),
-        new MenuItem("Assignments", "fa-clipboard", "Assignments"),
+    }
+
+    AddStudentToClassModel InputModel { get; set; }
+
+    record Post(string Name, string Text, string Image);
+
+    List<Post> _posts = new()
+    {
+        new Post("Mr/Ahmed", "Does anyone has a recommendation for Math class second year", "images/Mask group.png"),
+        new Post("Mr/Salah Name", "Don't miss today’s QUIZ I’ll drop it by 4pm", "images/Avatars (1).png"),
+        new Post("Mr/Othman Name", "Make sure to Finish your assignment and then upload it.", "images/Avatars.png")
     };
 
-    private AuthenticationState userAuth { get; set; }
-    private User User { get; set; }
+    private AuthenticationState? UserAuth { get; set; }
+    private User? User { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
         try
         {
-            userAuth = await GetAuthenticationStateAsync.GetAuthenticationStateAsync();
-            User = DbContext.Users.FirstOrDefault(u => u.UserName == userAuth.User.Identity.Name);
+            UserAuth = await GetAuthenticationStateAsync.GetAuthenticationStateAsync();
+            User = DbContext.Users.FirstOrDefault(u => u.UserName == UserAuth.User.Identity.Name);
         }
         catch (Exception)
         {
+    // ignored
         }
         await base.OnInitializedAsync();
     }
 
 
-    protected override async void OnAfterRender(bool firstRender)
+    private async void AddStudentToClass()
     {
-        if (!firstRender) return;
-        await JsRuntime.InvokeVoidAsync("StudentHome");
+        try
+        {
+            if (ClassCode is null or 0 || User is null) return;
+            await DbContext.UserClass.AddAsync(new UserClass { ClassCode = ClassCode.Value, UserId = User.Id });
+            await DbContext.SaveChangesAsync();
+            NavigationManager.NavigateTo("/Classes");
+        }
+        catch (Exception e)
+        {
+            await JsRuntime.InvokeVoidAsync("alert", e.Message);
+        }
     }
 
 }

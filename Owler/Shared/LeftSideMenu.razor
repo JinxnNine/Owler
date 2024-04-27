@@ -1,0 +1,48 @@
+﻿<div class="sideBar p-20 p-relative d-flex sp-between flex-col">
+    <div class="top">
+        <h3 class="fahkwang-regular p-relative txt-c mt-o">OWL<span>er</span></h3>
+        <ul >
+            @foreach (var item in _teacherHomeSideMenu)
+            {
+                <li>
+                    <a href="@item.Uri" class=" d-flex align-center fs-24  c-black rad-6 p-10">
+                        <i class="fa-solid @item.Icon fa-fw"></i>
+                        <span class="hide-moblie">@item.Name</span>
+                    </a>
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="bottom d-flex  flex-col">
+        <ul>
+            <li>
+                <a href="" class=" d-flex  align-center fs-24  c-black rad-6 p-10">
+                    <i class="fa-solid fa-circle-info fa-fw"></i>
+                    <span class="hide-moblie">Support</span>
+                </a>
+            </li>
+            <li>
+                <form class="form-inline" action="/Identity/Account/Logout" method="post">
+                    <button class=" d-flex  align-center fs-24  c-black rad-6 p-10">
+                        <i class="fa-solid fa-arrow-right-from-bracket fa-fw"></i>
+                        <span class="hide-moblie">Log Out</span>
+                    </button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</div>
+
+@code {
+
+    record MenuItem(string Name, string Icon, string Uri = "");
+
+    List<MenuItem> _teacherHomeSideMenu = new()
+    {
+        new MenuItem("Dashboard", "fa-house"),
+        new MenuItem("My Classes", "fa-book-open", "Classes"),
+        new MenuItem("Quizzes", "fa-clipboard-question", "Quizzes"),
+        new MenuItem("Assignments", "fa-clipboard", "Assignments"),
+    };
+
+}

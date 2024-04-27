@@ -1,0 +1,35 @@
+﻿@inject IJSRuntime JsRuntime
+<div class="datepicker main-border rad-20 " id="datepicker">
+    <div class="datepicker-header">
+        <button id="prevMonthBtn">&lt;</button>
+        <span class="month-year" id="currentMonthYear"></span>
+        <button id="nextMonthBtn">&gt;</button>
+    </div>
+    <table class="calendar" id="calendar">
+        <thead>
+        <tr>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+        </tr>
+        </thead>
+        <tbody id="calendar-body"></tbody>
+    </table>
+</div>
+
+
+@code{
+
+    protected override async void OnAfterRender(bool firstRender)
+    {
+        if (!firstRender) return;
+        await JsRuntime.InvokeVoidAsync("TeacherHome");
+    }
+
+
+
+}

@@ -80,6 +80,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2VsY29tZS5SYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/School Projects/Owler/Owler/Shared/DatePicker.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXERhdGVQaWNrZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/School Projects/Owler/Owler/Shared/LeftSideMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXExlZnRTaWRlTWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/School Projects/Owler/Owler/Shared/LoginDisplay.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXExvZ2luRGlzcGxheS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

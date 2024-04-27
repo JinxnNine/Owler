@@ -1,5 +1,88 @@
-﻿<h3>TeacherQuizzesPage</h3>
+﻿@using Owler.Data
+@using Owler.Models
+@using Microsoft.EntityFrameworkCore
+@using Microsoft.AspNetCore.Identity
+@inject ApplicationDbContext DbContext
+@inject SignInManager<User> SignInManager
+@inject AuthenticationStateProvider GetAuthenticationStateAsync
+@inject IJSRuntime JsRuntime
+
+<div class="m-5">
+
+    <h3>Teacher Page</h3>
+    <div class="m-2">
+
+        @foreach (var classItem in Classes)
+        {
+            <div class="card col-4">
+                <div class="card-header  d-flex justify-content-between align-items-center">
+                    <h4>@classItem.Name</h4>
+                    <div style="cursor: pointer" @onclick="()=>ExitClass(classItem)">✖</div>
+                    
+                </div>
+                <div class="card-body ">
+                    <p>@classItem.Description</p>
+                    <p>@classItem.ClassCode</p>
+                    <p>@classItem.CreationDate</p>
+                    <ul>
+                        @if (classItem.Users?.Count is null or <= 0)
+                        {
+                            <li>No Students To This Class Yet</li>
+                        }
+                        else
+                        {
+                            <p>Students:</p>
+                        }
+                        @foreach (var user in classItem.Users ?? new List<User>())
+                        {
+    
+                            <li>@user.UserName</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+
 
 @code {
-    
+    List<Class> Classes { get; set; } = new();
+    private AuthenticationState? UserAuth { get; set; }
+    private User? User { get; set; }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            UserAuth = await GetAuthenticationStateAsync.GetAuthenticationStateAsync();
+            User = DbContext.Users.FirstOrDefault(u => u.UserName == UserAuth.User.Identity.Name);
+            if (User is null) return;
+            Classes = await DbContext.Classes.Include(c=> c.Users).Where(c => c.TeacherId == User.Id).ToListAsync();
+        }
+        catch (Exception)
+        {
+    // ignored
+        }
+        await base.OnInitializedAsync();
+    }
+
+
+    private async Task ExitClass(Class classItemClassCode)
+    {
+        try
+        {
+            
+        DbContext.Classes.Remove(classItemClassCode);
+        await DbContext.SaveChangesAsync();
+        await InvokeAsync(StateHasChanged);
+        }catch (Exception e)
+        {
+            await JsRuntime.InvokeVoidAsync("alert", e.Message);
+
+        }
+    }
+
 }

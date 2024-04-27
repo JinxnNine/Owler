@@ -1,5 +1,74 @@
-﻿<h3>StudentQuizzesPage</h3>
+﻿@using Owler.Data
+@using Owler.Models
+@using Microsoft.EntityFrameworkCore
+@using Microsoft.AspNetCore.Identity
+@inject ApplicationDbContext DbContext
+@inject SignInManager<User> SignInManager
+@inject AuthenticationStateProvider GetAuthenticationStateAsync
+@inject IJSRuntime JsRuntime
+
+<div class="m-5">
+
+    <h3>@User?.Name Classes </h3>
+    <div class="m-2">
+        @foreach (var classItem in Classes)
+        {
+            <div class="card col-4">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h4>@classItem.Name</h4>
+                    <div style="cursor: pointer" @onclick="()=>ExitClass(classItem.ClassCode)">✖</div>
+                </div>
+                <div class="card-body ">
+                    <p>Teacher: @classItem.Teacher.Name</p>
+                    <p>@classItem.Description</p>
+                    <p>ClassCode: @classItem.ClassCode</p>
+                    <p>Creation Data: @classItem.CreationDate</p>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+
 
 @code {
-    
+    List<Class> Classes { get; set; } = new();
+
+    private AuthenticationState? UserAuth { get; set; }
+    private User? User { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            UserAuth = await GetAuthenticationStateAsync.GetAuthenticationStateAsync();
+            User = DbContext.Users.Include(u=> u.StudentClasses).ThenInclude(c=>c.Teacher).FirstOrDefault(u => u.UserName == UserAuth.User.Identity.Name);
+            if (User is null) return;
+            Classes = User.StudentClasses;
+        }
+        catch (Exception)
+        {
+    // ignored
+        }
+        await base.OnInitializedAsync();
+    }
+
+
+    private async void ExitClass(int classCode)
+    {
+        try
+        {
+            
+        var item = DbContext.UserClass.FirstOrDefault(c => c.ClassCode == classCode && c.UserId == User!.Id);
+        if (item is null )return;
+         DbContext.UserClass.Remove(item);
+        await DbContext.SaveChangesAsync();
+        await InvokeAsync(StateHasChanged);
+        }catch (Exception e)
+        {
+            await JsRuntime.InvokeVoidAsync("alert", e.Message);
+
+        }
+    }
+
 }
